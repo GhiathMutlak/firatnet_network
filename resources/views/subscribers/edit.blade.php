@@ -27,22 +27,35 @@
                                 {{ Form::text('name', $subscriber->name, ['class' => 'form-control','placeholder'=>'Subscriber name']) }}
                             </p>
 
+                            <h4 class="card-title">
+                                {!! Form::label('line_name', 'Line' )!!}
+                            </h4>
                             <p class="card-text">
-
                                 <select class="form-control js-example-basic-single" name="line_name">
+
                                     @foreach($lines as $line)
-                                        <option value="{{ $line->name }}">{{ $line->name }}</option>
+                                        @if ( $line->id == $subscriber->line_id )
+                                            <option value="{{ $line->name }}" selected="selected">{{ $line->name }}</option>
+                                            @else
+                                            <option value="{{ $line->name }}" >{{ $line->name }}</option>
+                                        @endif
+
+
                                     @endforeach
                                 </select>
                             </p>
 
                             <h4 class="card-title">
-                                {!! Form::label('broadcaster_name', 'Broadcaster name' )!!}
+                                {!! Form::label('broadcaster_name', 'Broadcaster' )!!}
                             </h4>
                             <p class="card-text">
                                 <select class="form-control js-example-basic-single" name="broadcaster_name">
                                     @foreach($broadcasters as $broadcaster)
-                                        <option value="{{ $broadcaster->name }}">{{ $broadcaster->name }}</option>
+                                        @if ( $broadcaster->id == $subscriber->broadcaster_id )
+                                            <option value="{{ $broadcaster->name }}" selected="selected">{{ $broadcaster->name }}</option>
+                                            @else
+                                            <option value="{{ $broadcaster->name }}" >{{ $broadcaster->name }}</option>
+                                       @endif
                                     @endforeach
                                 </select>
                             </p>

@@ -24,9 +24,15 @@
                                     <div class="panel-heading">
 
                                         <p>
-                                            <span class="panel-body">Name : {{$subscriber->name}}</span>
-                                            <span class="panel-body">Line : {{$subscriber->line_id}}</span>
-                                            <span class="panel-body">Broadcaster : {{$subscriber->broadcaster_id}}</span>
+                                            <span class="panel-body">
+                                                Name : {{$subscriber->name}}
+                                            </span>
+                                            <span class="panel-body">
+                                                Line : {{App\Line::find($subscriber->line_id)->name}}
+                                            </span>
+                                            <span class="panel-body">
+                                                Broadcaster : {{App\Broadcaster::find($subscriber->broadcaster_id)->name}}
+                                            </span>
 
 
                                         </p>
