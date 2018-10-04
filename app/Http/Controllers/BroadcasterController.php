@@ -75,7 +75,7 @@ class BroadcasterController extends Controller
      */
     public function show($id)
     {
-        //
+        return redirect('broadcasters.index');
     }
 
     /**
@@ -86,7 +86,9 @@ class BroadcasterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $broadcaster = Broadcaster::find($id);
+
+        return view('broadcasters.edit')->with('broadcaster',$broadcaster);
     }
 
     /**
@@ -98,7 +100,12 @@ class BroadcasterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $broadcaster = Broadcaster::find($id);
+        $broadcaster->name = $request->input('name');
+
+        $broadcaster->save();
+
+        return redirect('/broadcasters')->with('success', 'Done successfully');
     }
 
     /**
@@ -109,6 +116,10 @@ class BroadcasterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $broadcaster = Broadcaster::find($id);
+
+        $broadcaster->delete();
+
+        return redirect('/broadcasters')->with('success', 'Done successfully');
     }
 }

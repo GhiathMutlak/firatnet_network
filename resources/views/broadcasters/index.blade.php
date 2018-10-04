@@ -24,8 +24,9 @@
                                     <div class="panel-body">
 
                                         <p>
-                                            <span>Name : </span><span>{{$broadcaster->name}}</span>
-                                            <span>District : </span><span>{{$broadcaster->district_id}}</span>
+                                            <span class="  panel-danger">District : {{$broadcaster->district_id}}</span>
+                                            <span class="panel-body">Name : {{$broadcaster->name}}</span>
+
                                         </p>
 
                                         <ul class="form-inline list-inline">

@@ -11,20 +11,20 @@
                 <div class="card text-white bg-light mb-3" >
 
                     <div class="card-header">
-                        <h3>Edit district</h3>
+                        <h3>Edit Broadcaster</h3>
                     </div>
 
-                    {!! Form::open(['action' => ['DistrictController@update' ,$district->id ], 'method'=>'POST']) !!}
+                    {!! Form::open(['action' => ['BroadcasterController@update' ,$broadcaster->id ], 'method'=>'POST']) !!}
 
                     <div class="card-body bg-light text-dark">
 
                         <div class="form-group">
 
                             <h4 class="card-title">
-                                {{Form::label('name', 'District name' )}}
+                                {{Form::label('name', 'Broadcaster name' )}}
                             </h4>
                             <p class="card-text">
-                                {{ Form::text('name', $district->name, ['class' => 'form-control','placeholder'=>'District name']) }}
+                                {{ Form::text('name', $broadcaster->name, ['class' => 'form-control','placeholder'=>'Broadcaster name']) }}
                             </p>
 
 
