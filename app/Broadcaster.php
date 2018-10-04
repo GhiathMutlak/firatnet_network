@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class Broadcaster extends Model
 {
     public function subscribers () {
-        return $this->hasMany(Subscriber::class);
+        return $this->hasMany(Subscriber::class, 'broadcaster_id','id');
     }
 
     public function district () {

@@ -21,9 +21,9 @@
                         <div class="col-md-4" >
 
                                 <div class="panel panel-info" >
-                                    <div class="panel-body">
+                                    <div class="panel-heading">
 
-                                        <p>
+                                        <p class="panel-body">
                                             <span class="  panel-danger">District : {{$broadcaster->district_id}}</span>
                                             <span class="panel-body">Name : {{$broadcaster->name}}</span>
 

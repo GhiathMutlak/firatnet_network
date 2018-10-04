@@ -18,9 +18,9 @@
                         <div class="col-md-4" >
 
                                 <div class="panel panel-info" >
-                                    <div class="panel-body">
+                                    <div class="panel-heading">
 
-                                        <p>{{$line->name}}</p>
+                                        <p class="panel-body">{{$line->name}}</p>
 
                                         <ul class="form-inline list-inline">
 
