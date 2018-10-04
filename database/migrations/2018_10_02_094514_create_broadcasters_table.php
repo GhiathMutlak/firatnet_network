@@ -15,7 +15,7 @@ class CreateBroadcastersTable extends Migration
     {
         Schema::create('broadcasters', function ( $table) {
             $table->increments('id');
-            $table->string('name',255)->unique();
+            $table->string('name',255);
             $table->integer('district_id')->unsigned();
             $table->foreign('district_id')->references('id')->on('districts');
             $table->timestamps();

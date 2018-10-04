@@ -15,7 +15,7 @@ class CreateDistrictsTable extends Migration
     {
         Schema::create('districts', function ( $table) {
             $table->increments('id');
-            $table->string('name',255)->unique();
+            $table->string('name',255);
             $table->timestamps();
         });
     }

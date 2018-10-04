@@ -20,8 +20,6 @@
 
                     <div class="card-body bg-light text-dark">
 
-                        {{csrf_token()}}
-
                         <div class="form-group">
 
                             <h4 class="card-title">
@@ -30,6 +28,8 @@
                             <p class="card-text">
                                 {{ Form::text('name', '', ['class' => 'form-control','placeholder'=>'Name']) }}
                             </p>
+
+                            {!! Form::hidden('_token', csrf_token()) !!}
 
                             {{Form::submit('Create', [ 'class' => 'btn btn-primary ' ])}}
 

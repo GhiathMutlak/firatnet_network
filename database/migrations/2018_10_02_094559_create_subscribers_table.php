@@ -15,7 +15,7 @@ class CreateSubscribersTable extends Migration
     {
         Schema::create('subscribers', function ( $table) {
             $table->increments('id');
-            $table->string('name',255)->unique();
+            $table->string('name',255);
             $table->integer('line_id')->unsigned();
             $table->foreign('line_id')->references('id')->on('lines');
             $table->integer('broadcaster_id')->unsigned();

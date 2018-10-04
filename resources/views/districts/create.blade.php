@@ -21,7 +21,6 @@
                     <div class="card-body bg-light text-dark">
 
                         <div class="form-group">
-                            {{csrf_token()}}
 
                             <h4 class="card-title">
                                 {{Form::label('name', 'District name' )}}
@@ -29,6 +28,8 @@
                             <p class="card-text">
                                 {{ Form::text('name', '', ['class' => 'form-control','placeholder'=>'Name']) }}
                             </p>
+
+                            {!! Form::hidden('_token', csrf_token()) !!}
 
                             {{Form::submit('Create', [ 'class' => 'btn btn-primary ' ])}}
 
