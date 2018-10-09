@@ -133,4 +133,9 @@ class SubscriberController extends Controller
 
         return redirect('/subscribers')->with('success', 'Done successfully');
     }
+
+    public function showByLine()
+    {
+
+    }
 }

@@ -10,6 +10,7 @@
             </a>
         </h2>
 
+        <hr>
 
     </div>
 
@@ -24,8 +25,8 @@
                                     <div class="panel-heading">
 
                                         <p class="panel-body">
-                                            <span class="  panel-danger">District : {{$broadcaster->district_id}}</span>
-                                            <span class="panel-body">Name : {{$broadcaster->name}}</span>
+                                            <span class="  ">District : {{$broadcaster->district_id}}</span>
+                                            <span class="">Name : {{$broadcaster->name}}</span>
 
                                         </p>
 

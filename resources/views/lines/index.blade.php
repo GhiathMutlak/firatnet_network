@@ -10,6 +10,8 @@
                 </a>
             </h2>
 
+            <hr>
+
             @if ( count($lines) > 0 )
 
                 <div class="row">

@@ -12,8 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('subscribers.index');
 });
+
+Route::get('/subscribers/show_by_line', function () {
+
+    $subscribers = App\Subscriber::all();
+    $lines = App\Line::all();
+    return view('subscribers.show_by_line')
+        ->with('subscribers', $subscribers)
+        ->with('lines', $lines);
+
+})->name('by_line');
 
 Auth::routes();
 
@@ -26,3 +36,5 @@ Route::resource('districts', 'DistrictController' );
 Route::resource('broadcasters', 'BroadcasterController' );
 
 Route::resource('subscribers', 'SubscriberController' );
+
+//Route::get('/subscribers/show_by_line', 'SubscriberController@showByLine')->name('by_line');

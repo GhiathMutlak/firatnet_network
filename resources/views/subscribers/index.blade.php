@@ -3,16 +3,25 @@
 @section('content')
 
     <div>
+
         <h2 class="card mb-3">
             Subscribers
-            <a class="btn btn-primary pull-right" href="/subscribers/create">
-                Create new
-            </a>
-        </h2>
 
+            <ul class="list-inline pull-right">
+
+                <a class="btn btn-info " href="{{route('by_line')}}">
+                    Show by line
+                </a>
+                <a class="btn btn-primary " href="{{url('/subscribers/create')}}">
+                    Create new
+                </a>
+
+            </ul>
+        </h2>
 
     </div>
 
+    <hr>
             @if ( count($subscribers) > 0 )
 
                 <div class="row">
@@ -24,15 +33,15 @@
                                     <div class="panel-heading">
 
                                         <p>
-                                            <span class="panel-body">
+                                        <h5>
                                                 Name : {{$subscriber->name}}
-                                            </span>
-                                            <span class="panel-body">
+                                        </h5>
+                                        <h5>
                                                 Line : {{App\Line::find($subscriber->line_id)->name}}
-                                            </span>
-                                            <span class="panel-body">
+                                        </h5>
+                                        <h5 class="">
                                                 Broadcaster : {{App\Broadcaster::find($subscriber->broadcaster_id)->name}}
-                                            </span>
+                                        </h5>
 
 
                                         </p>
@@ -62,6 +71,7 @@
                     @endforeach
                 </div>
 
+                {{$subscribers->links()}}
 
                 </div>
             @else
